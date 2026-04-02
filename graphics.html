@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphics Designing | Damodar Ghimire</title>
+<style>
+/* GENERAL STYLES */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #0a0a0a;
+  padding: 15px 20px;
+  border-bottom: 1px solid #222;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* HEADER */
+header.section-header {
+  text-align: center;
+  padding: 60px 20px 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(255,255,255,0.1);
+}
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  text-align: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Watermark only in lightbox */
+.image-container .watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  color: rgba(255,255,255,0.3);
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+}
+
+#lightbox span {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+#lightbox-caption {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+#lightbox-designer {
+  color: #FFD700;
+  font-size: 1.1rem;
+  margin-top: 0px;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+/* COMING SOON */
+.coming-soon {
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 20px;
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px 20px;
+  border-top: 1px solid #222;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  header.section-header { font-size: 2rem; padding: 50px 15px 25px; }
+  .projects { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); padding: 30px 15px; gap: 20px; }
+  .coming-soon { font-size: 1.3rem; }
+}
+
+@media(max-width:480px){
+  header.section-header { font-size: 1.5rem; padding: 40px 10px 20px; }
+  .projects { grid-template-columns: 1fr; padding: 20px 10px; gap: 15px; }
+  .coming-soon { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Damodar Ghimire</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="section-header">
+  <h1>Graphics Designing</h1>
+</header>
+
+<!-- PROJECTS GRID -->
+<section class="projects">
+  <div class="project-card"><img src="Devils .png" alt="Project 1"></div>
+  <div class="project-card"><img src="PIZZA.png" alt="Project 2"></div>
+  <div class="project-card"><img src="Redbull.png" alt="Project 3"></div>
+  <div class="project-card"><img src="Womens day poster.png" alt="Project 4"></div>
+  <div class="project-card"><img src="Election-Poster.png" alt="Project 5"></div>
+  <div class="project-card"><img src="Trio-Poster.png" alt="Project 6"></div>
+  <div class="project-card"><img src="JASPRIT  BUMRAH.png" alt="Project 7"></div>
+  <div class="project-card"><img src="Happy Holi.png" alt="Project 8"></div>
+  <div class="project-card"><img src="Balen as a pm.png" alt="Project 9"></div>
+  <div class="project-card"><img src="haland.png" alt="Project 10"></div>
+  <div class="project-card"><img src="honey.png" alt="Project 11"></div>
+  <div class="project-card"><img src="dipendra singh airee.png" alt="Project 12"></div>
+  <div class="project-card"><img src="burger ad.png" alt="Project 13"></div>
+</section>
+
+<!-- COMING SOON -->
+<section class="coming-soon text-center">
+  <h2>“Fresh projects arriving soon — don’t miss out!”</h2>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <div class="lightbox-content">
+    <div class="image-container">
+      <img src="" alt="Big Image">
+      <div class="watermark">© Damodar Ghimire</div>
+    </div>
+    <p id="lightbox-caption"></p>
+    <p id="lightbox-designer">Designed by Damodar</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer text-center">
+  <p>&copy; 2026 Damodar Ghimire. All Rights Reserved.</p>
+</footer>
+
+<script>
+const projectImages = document.querySelectorAll('.project-card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = lightbox.querySelector('.image-container img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const closeBtn = document.getElementById('close');
+
+// Captions
+const captions = {
+  "Devils .png": "Devils Poster - Creative Art Design",
+  "PIZZA.png": "Pizza Poster - Mouth-watering Design",
+  "Redbull.png": "Redbull Poster - Energy & Action",
+  "Womens day poster.png": "Women's Day Poster - Celebrate Women",
+  "Election-Poster.png": "Election Campaign Poster",
+  "Trio-Poster.png": "Trio Poster - Vibrant Design",
+  "JASPRIT  BUMRAH.png": "Jasprit Bumrah Poster",
+  "Happy Holi.png": "Happy Holi Poster - Festival of Colors",
+  "Balen as a pm.png": "Balen Poster",
+  "haland.png": "Haaland Poster - Football Star",
+  "honey.png": "Honey Poster - Sweet & Natural",
+  "dipendra singh airee.png": "Dipendra Singh Airee Poster",
+  "burger ad.png": "Burger Advertisement Poster"
+};
+
+// Open lightbox on click
+projectImages.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImage.src = img.src;
+
+    const fileName = img.getAttribute('src').split('/').pop();
+    lightboxCaption.textContent = captions[fileName] || "";
+  });
+});
+
+// Close lightbox
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+  lightboxImage.src = '';
+  lightboxCaption.textContent = '';
+});
+
+// Close if clicked outside image
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+    lightboxImage.src = '';
+    lightboxCaption.textContent = '';
+  }
+});
+</script>
+</body>
+</html>
