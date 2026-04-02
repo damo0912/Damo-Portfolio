@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Damodar Ghimire</title>
+
+<!-- Font Awesome CSS for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* GENERAL STYLES */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .text-center { text-align: center; }
+
+    /* ABOUT CONTAINER */
+    .about-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    /* INTRO SECTION */
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    .intro-section img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00f;
+    }
+    .intro-details {
+      flex: 1;
+      min-width: 250px;
+    }
+    .intro-details h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #00f;
+    }
+    .intro-details p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* CV SECTION */
+    .cv-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .cv-section h2 {
+      font-size: 28px;
+      color: #00f;
+      margin-bottom: 20px;
+    }
+    .cv-section img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 12px;
+      border: 2px solid #00f;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cv-section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #00f;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .download-btn:hover {
+      background-color: #0055cc;
+      transform: scale(1.05);
+    }
+
+    /* SOCIAL SECTION */
+    .social-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .social-section h2 {
+      margin-bottom: 15px;
+      color: #00f;
+      font-size: 24px;
+    }
+    .social-section a {
+      font-size: 32px;
+      margin: 0 15px;
+      color: #fff;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+    .social-section a:hover {
+      color: #00f;
+      transform: scale(1.2);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px){
+      .intro-section { flex-direction: column; text-align: center; }
+      .intro-details h1 { font-size: 28px; }
+      .intro-details p { font-size: 16px; }
+      .cv-section img { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="about-container">
+
+  <!-- INTRO SECTION -->
+  <div class="intro-section">
+    <img src="damo.jpg" alt="My Photo">
+    <div class="intro-details">
+      <h1>Damodar Ghimire</h1>
+      <p>
+        Hello! I am an 18-year-old passionate designer and developer. <br><br>I love to design and create modern web designs, graphic art, and videos. My designs are focused on simplicity, functionality, and creativity. I always learn new things to enhance my designs. I have completed my +2 in Science and have secured a GPA of 2.91 in my SLC. I am pursuing my BCA.<br><br> I want to build my future in the field of IT and become a skilled full-stack developer. I love to learn new things and enhance my knowledge to achieve my goals.
+      </p>
+    </div>
+  </div>
+
+  <!-- CV SECTION -->
+  <div class="cv-section">
+    <h2>View My CV</h2>
+    <a href="DAMO-CV.jpg" target="_blank">
+      <img src="DAMO-CV.jpg" alt="My CV">
+    </a>
+    <a href="DAMO-CV.jpg" download="Damodar_CV.jpg" class="download-btn">Download CV</a>
+  </div>
+
+  <!-- SOCIAL SECTION -->
+ <div class="social-section">
+  <h2>Follow Me</h2>
+  
+<a href="https://instagram.com/dg.09.12" target="_blank"><i class="fab fa-instagram"></i></a>
+
+<a href="https://www.facebook.com/damodar6969" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+<a href="https://www.linkedin.com/in/damodar-ghimire-6b3910345/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+<a href="https://wa.me/9748265653" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<a href="viber://chat?number=9748265653"><i class="fab fa-viber"></i></a>
+
+<a href="https://www.tiktok.com/@sdg.09.12" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+<a href="mailto:dghimire373@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+
+</body>
+</html>
