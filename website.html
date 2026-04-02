@@ -3,73 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Designing</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+<title>Web Designing | Damodar Ghimire</title>
 <style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:black;
-    color:white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    text-align:center;
-    padding:40px;
-    font-size:35px;
-    font-weight:bold;
+body {
+  font-family: 'Arial', Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
 }
 
-.projects{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    padding:40px;
+/* NAVBAR */
+.navbar {
+  background-color: #0a0a0a;
+  padding: 20px 10px;
+  text-align: center;
 }
 
-.project-card{
-    width:250px;
-    height:150px;
-    background:#111;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    color:white;
-    font-size:20px;
-    border:1px solid #333;
-    transition:0.3s;
+.navbar-brand {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.project-card:hover{
-    transform:scale(1.05);
-    background:#1a1a1a;
+/* HEADER */
+.section-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.section-header h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+/* PROJECTS GRID */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.project-card {
+  width: 280px;
+  height: 150px;
+  background: #111;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: 1px solid #222;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  background: #1a1a1a;
+  box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+}
+
+/* COMING SOON */
+.coming-soon-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.coming-soon-section h2 {
+  font-size: 1.8rem;
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #222;
+  padding: 20px 10px;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .project-card {
+    width: 220px;
+    height: 140px;
+    font-size: 1.1rem;
+  }
+
+  .section-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .coming-soon-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 10px;
+  }
+
+  .project-card {
+    width: 90%;
+    height: 130px;
+  }
+
+  .section-header h1 {
+    font-size: 2rem;
+  }
+
+  .coming-soon-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 100%;
+    height: 120px;
+    font-size: 1.1rem;
+  }
+
+  .section-header h1 {
+    font-size: 1.6rem;
+    padding: 60px 10px 20px;
+  }
+
+  .coming-soon-section h2 {
+    font-size: 1.1rem;
+    padding: 20px 10px;
+  }
 }
 </style>
+
 
 </head>
 <body>
 
-<header>
-WEB Designing
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Damodar Ghimire</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="section-header">
+  <h1>WEB Designing</h1>
 </header>
 
-<div class="projects">
+<!-- PROJECTS GRID -->
+<section class="projects">
+  <a href="himalayan.html" target="_blank" class="project-card">
+    Himalayan-Jerseys
+  </a>
 
-<a href="index.html" target="_blank" class="project-card">
-Himalayan-Jerseys
-</a>
+  <a href="project2.html" target="_blank" class="project-card">
+    Project 2
+  </a>
+</section>
 
-<a href="project2.html" class="project-card">
-Project 2
-</a>
+<!-- COMING SOON -->
+<section class="coming-soon-section">
+  <h2>“Fresh projects arriving soon — don’t miss out!”</h2>
+</section>
 
-</div>
-<h1  align="center">“Fresh projects arriving soon — don’t miss out!”</h1>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container text-center">
+    <p>&copy; 2026 Damodar Ghimire. All Rights Reserved.</p>
+  </div>
+</footer>
 
 </body>
 </html>
