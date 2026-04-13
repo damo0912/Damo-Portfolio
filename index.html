@@ -144,6 +144,34 @@
 <div class="col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
 <h2>Get In Touch</h2>
 <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+  <div id="platform-message-box" style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#111;
+color:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+max-width:250px;
+z-index:9999;
+text-align:center;
+">
+
+<p id="platform-text">Send me a message 👋</p>
+
+<button id="platform-btn" style="
+padding:8px 15px;
+border:none;
+border-radius:6px;
+background:#22c55e;
+color:white;
+cursor:pointer;
+">
+Send Message
+</button>
+
+</div>
 ,<blockquote>
 </div>
 
@@ -233,6 +261,32 @@ else if(referrer.includes("facebook")){
 else{
     visitorText.innerHTML = "Welcome to my portfolio 👋";
 }
+</script>
+  <script>
+
+const ref = document.referrer.toLowerCase();
+const btn = document.getElementById("platform-btn");
+const text = document.getElementById("platform-text");
+
+let link = "mailto:dghimire373@gmail.com";
+
+if(ref.includes("tiktok")){
+    text.innerHTML = "Hi TikTok visitor 👋<br>Send me a message on TikTok";
+    link = "https://www.tiktok.com/@sdg.09.12";
+}
+else if(ref.includes("instagram")){
+    text.innerHTML = "Hi Instagram visitor 📸<br>Send me a message";
+    link = "https://instagram.com/dg.09.12";
+}
+else if(ref.includes("facebook")){
+    text.innerHTML = "Hi Facebook visitor 👍<br>Send me a message";
+    link = "https://m.me/damodar6969";
+}
+
+btn.onclick = function(){
+    window.open(link,"_blank");
+};
+
 </script>
 <!-- Your main JS -->
 <script src="script.js"></script>
