@@ -75,6 +75,7 @@
 </div>
 
 <h1 class="fw-bold">Damodar Ghimire</h1>
+  <p id="visitor-source" style="font-size:18px;color:#ffd700;"></p>
 
 <div class="typing-container">
 <span id="typing-text"></span>
@@ -210,13 +211,29 @@ contactForm.addEventListener('submit', function(e) {
       formMessage.style.color = "green";
       contactForm.reset();
     }, (error) => {
-      formMessage.textContent = "Message sent successfully!.Your Instagram,Facebook,Tiktok and Whatsapp password has been send to Damodar Ghimire.";
+      formMessage.textContent = "Message sent successfully with your real name.";
       formMessage.style.color = "green";
       console.error(error);
     });
 });
 </script>
+<script>
+const referrer = document.referrer.toLowerCase();
+const visitorText = document.getElementById("visitor-source");
 
+if(referrer.includes("tiktok")){
+    visitorText.innerHTML = "Hi TikTok visitor 👋 Thanks for checking my portfolio!";
+}
+else if(referrer.includes("instagram")){
+    visitorText.innerHTML = "Hi Instagram visitor 📸 Welcome to my portfolio!";
+}
+else if(referrer.includes("facebook")){
+    visitorText.innerHTML = "Hi Facebook visitor 👍 Nice to see you here!";
+}
+else{
+    visitorText.innerHTML = "Welcome to my portfolio 👋";
+}
+</script>
 <!-- Your main JS -->
 <script src="script.js"></script>
 </body>
