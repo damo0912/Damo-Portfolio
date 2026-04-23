@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,9 @@
   <title>About Me | Damodar Ghimire</title>
   <link rel="icon" type="image/jpeg" href="damo-icon.jpg">
 
-<!-- Font Awesome CSS for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     /* GENERAL STYLES */
     body {
@@ -19,6 +21,40 @@
     }
     a { text-decoration: none; color: inherit; }
     .text-center { text-align: center; }
+
+    /* QR CODE */
+    .qr-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .qr-container img {
+      width: 100px;
+      border: 2px solid #00f;
+      border-radius: 10px;
+      background: #fff;
+      padding: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-container:hover img {
+      transform: scale(1.1);
+    }
+
+    .qr-text {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #00f;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .qr-container:hover .qr-text {
+      opacity: 1;
+    }
 
     /* ABOUT CONTAINER */
     .about-container {
@@ -83,7 +119,6 @@
       padding: 12px 25px;
       background-color: #00f;
       color: #fff;
-      text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
       transition: background 0.3s ease, transform 0.3s ease;
@@ -124,7 +159,14 @@
     }
   </style>
 </head>
+
 <body>
+
+<!-- QR CODE -->
+<div class="qr-container">
+  <img src="qr.png" alt="QR Code">
+  <div class="qr-text">Scan Me</div>
+</div>
 
 <div class="about-container">
 
@@ -134,39 +176,42 @@
     <div class="intro-details">
       <h1>Damodar Ghimire</h1>
       <p>
-        Hello! I am an 18-year-old passionate designer and developer. <br><br>I love to design and create modern web designs, graphic art, and videos. My designs are focused on simplicity, functionality, and creativity. I always learn new things to enhance my designs. I have completed my +2 in Science and have secured a GPA of 2.91 in my SLC. I am pursuing my BCA.<br><br> I want to build my future in the field of IT and become a skilled full-stack developer. I love to learn new things and enhance my knowledge to achieve my goals.
+        Hello! I am an 18-year-old passionate designer and developer. <br><br>
+        I love to design and create modern web designs, graphic art, and videos.
+        My designs are focused on simplicity, functionality, and creativity.
+        I always learn new things to enhance my designs.
+        I have completed my +2 in Science and have secured a GPA of 2.91 in my SLC.
+        I am pursuing my BCA.<br><br>
+        I want to build my future in the field of IT and become a skilled full-stack developer.
+        I love to learn new things and enhance my knowledge to achieve my goals.
       </p>
     </div>
   </div>
 
   <!-- CV SECTION -->
   <div class="cv-section">
-    <h2><a href="cv.html">View My CV</h2><br><br>
+    <h2><a href="cv.html">View My CV</a></h2><br><br>
     
     <img src="DAMO-CV.jpg"><br><br>
-    <a href="DAMO-CV.jpg" target="_blank">
-    </a>
+
     <a href="DAMO-CV.jpg" download="Damo_CV.jpg" class="download-btn">Download CV</a>
   </div>
 
   <!-- SOCIAL SECTION -->
- <div class="social-section">
-  <h2>Get In Touch With Me</h2>
-  
-<a href="https://instagram.com/dg.09.12" target="_blank"><i class="fab fa-instagram"></i></a>
+  <div class="social-section">
+    <h2>Get In Touch With Me</h2>
 
-<a href="https://www.facebook.com/damodar6969" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/dg.09.12" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/damodar6969" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.linkedin.com/in/damodar-ghimire-6b3910345/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/9748265653" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="viber://chat?number=9748265653"><i class="fab fa-viber"></i></a>
+    <a href="https://www.tiktok.com/@sdg.09.12" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="mailto:dghimire373@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
 
-<a href="https://www.linkedin.com/in/damodar-ghimire-6b3910345/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-
-<a href="https://wa.me/9748265653" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<a href="viber://chat?number=9748265653"><i class="fab fa-viber"></i></a>
-
-<a href="https://www.tiktok.com/@sdg.09.12" target="_blank"><i class="fab fa-tiktok"></i></a>
-
-<a href="mailto:dghimire373@gmail.com"><i class="fas fa-envelope"></i></a>
 </div>
 
 </body>
 </html>
+```
