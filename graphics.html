@@ -6,7 +6,105 @@
 <title>Graphics Designing &  Damodar Ghimire</title>
   <link rel="icon" type="image/jpeg" href="damo-icon.jpg">
 <style>
-/* GENERAL STYLES */
+/* GENERAL STYLES */const projectImages = document.querySelectorAll('.project-card img');
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = lightbox.querySelector('img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxInfo = document.getElementById('lightbox-info');
+
+const closeBtn = document.getElementById('close');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+let currentIndex = 0;
+
+// ✅ CLEAN CAPTIONS (SAFE KEYS = USE FILE NAMES EXACTLY)
+const captions = {
+  "viraaat.png": "Virat Kohli Poster - Cricket Legend Edit",
+  "RKO.png": "Randy Orton RKO Moment Edit",
+  "burger ad.png": "Burger Advertisement Poster",
+  "Devils .png": "Devils Poster - Creative Art Design",
+
+  "Gaming Headset.png": "Gaming Headset Poster",
+  "haland.png": "Erling Haaland Football Edit",
+  "sunglasses.png": "Sunglasses Product Ad",
+  "Williamson.png": "Kane Williamson Poster",
+
+  "PIZZA.png": "Pizza Advertisement Poster",
+  "dipendra singh airee.png": "Dipendra Singh Airee Cricket Poster",
+  "Redbull.png": "Red Bull Energy Poster",
+  "JASPRIT  BUMRAH.png": "Jasprit Bumrah Bowling Poster",
+
+  "Womens day poster.png": "Women's Day Poster",
+  "Election-Poster.png": "Election Campaign Poster",
+  "Trio-Poster.png": "Trio Creative Poster",
+  "Happy Holi.png": "Holi Festival Poster",
+
+  "Balen as a pm.png": "Balen Shah as PM Concept",
+  "honey.png": "Honey Product Poster"
+};
+
+// Convert NodeList to Array
+const imagesArray = Array.from(projectImages);
+
+// 🔥 OPEN LIGHTBOX FUNCTION
+function openLightbox(index) {
+  currentIndex = index;
+  const img = imagesArray[currentIndex];
+
+  lightbox.style.display = "flex";
+  lightboxImage.src = img.src;
+
+  const fileName = img.getAttribute("src").split("/").pop();
+
+  lightboxCaption.textContent =
+    captions[fileName] || "No caption available";
+
+  lightboxInfo.textContent =
+    `Image ${currentIndex + 1} / ${imagesArray.length}`;
+}
+
+// CLICK IMAGE
+imagesArray.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    openLightbox(index);
+  });
+});
+
+// NEXT
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % imagesArray.length;
+  openLightbox(currentIndex);
+});
+
+// PREV
+prevBtn.addEventListener("click", () => {
+  currentIndex =
+    (currentIndex - 1 + imagesArray.length) % imagesArray.length;
+  openLightbox(currentIndex);
+});
+
+// CLOSE
+function closeLightbox() {
+  lightbox.style.display = "none";
+  lightboxImage.src = "";
+}
+
+closeBtn.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// KEYBOARD CONTROL
+document.addEventListener("keydown", (e) => {
+  if (lightbox.style.display === "flex") {
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+    if (e.key === "Escape") closeLightbox();
+  }
+});
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
