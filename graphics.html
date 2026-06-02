@@ -3,440 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphics Designing &  Damodar Ghimire</title>
-  <link rel="icon" type="image/jpeg" href="damo-icon.jpg">
+<title>Graphics Designing & Damodar Ghimire</title>
+
 <style>
-/* GENERAL STYLES */const projectImages = document.querySelectorAll('.project-card img');
 
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = lightbox.querySelector('img');
-const lightboxCaption = document.getElementById('lightbox-caption');
-const lightboxInfo = document.getElementById('lightbox-info');
-
-const closeBtn = document.getElementById('close');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-
-let currentIndex = 0;
-
-// ✅ CLEAN CAPTIONS (SAFE KEYS = USE FILE NAMES EXACTLY)
-const captions = {
-  "viraaat.png": "Virat Kohli Poster - Cricket Legend Edit",
-  "RKO.png": "Randy Orton RKO Moment Edit",
-  "burger ad.png": "Burger Advertisement Poster",
-  "Devils .png": "Devils Poster - Creative Art Design",
-
-  "Gaming Headset.png": "Gaming Headset Poster",
-  "haland.png": "Erling Haaland Football Edit",
-  "sunglasses.png": "Sunglasses Product Ad",
-  "Williamson.png": "Kane Williamson Poster",
-
-  "PIZZA.png": "Pizza Advertisement Poster",
-  "dipendra singh airee.png": "Dipendra Singh Airee Cricket Poster",
-  "Redbull.png": "Red Bull Energy Poster",
-  "JASPRIT  BUMRAH.png": "Jasprit Bumrah Bowling Poster",
-
-  "Womens day poster.png": "Women's Day Poster",
-  "Election-Poster.png": "Election Campaign Poster",
-  "Trio-Poster.png": "Trio Creative Poster",
-  "Happy Holi.png": "Holi Festival Poster",
-
-  "Balen as a pm.png": "Balen Shah as PM Concept",
-  "honey.png": "Honey Product Poster"
-};
-
-// Convert NodeList to Array
-const imagesArray = Array.from(projectImages);
-
-// 🔥 OPEN LIGHTBOX FUNCTION
-function openLightbox(index) {
-  currentIndex = index;
-  const img = imagesArray[currentIndex];
-
-  lightbox.style.display = "flex";
-  lightboxImage.src = img.src;
-
-  const fileName = img.getAttribute("src").split("/").pop();
-
-  lightboxCaption.textContent =
-    captions[fileName] || "No caption available";
-
-  lightboxInfo.textContent =
-    `Image ${currentIndex + 1} / ${imagesArray.length}`;
-}
-
-// CLICK IMAGE
-imagesArray.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    openLightbox(index);
-  });
-});
-
-// NEXT
-nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % imagesArray.length;
-  openLightbox(currentIndex);
-});
-
-// PREV
-prevBtn.addEventListener("click", () => {
-  currentIndex =
-    (currentIndex - 1 + imagesArray.length) % imagesArray.length;
-  openLightbox(currentIndex);
-});
-
-// CLOSE
-function closeLightbox() {
-  lightbox.style.display = "none";
-  lightboxImage.src = "";
-}
-
-closeBtn.addEventListener("click", closeLightbox);
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-// KEYBOARD CONTROL
-document.addEventListener("keydown", (e) => {
-  if (lightbox.style.display === "flex") {
-    if (e.key === "ArrowRight") nextBtn.click();
-    if (e.key === "ArrowLeft") prevBtn.click();
-    if (e.key === "Escape") closeLightbox();
-  }
-});
+/* GENERAL */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background: #000;
   color: #fff;
-  line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* NAVBAR */
-.navbar {
-  background-color: #0a0a0a;
-  padding: 15px 20px;
-  border-bottom: 1px solid #222;
-}
-
-.navbar .navbar-brand {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: white;
-}
-
-/* HEADER */
-header.section-header {
-  text-align: center;
-  padding: 60px 20px 30px;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-/* PROJECT GRID */
+/* GRID */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  padding: 40px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 30px;
 }
 
 .project-card {
-  position: relative;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #333;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
-  border-radius: 15px;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(255,255,255,0.1);
 }
 
 /* LIGHTBOX */
 #lightbox {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0; left:0;
+  width:100%; height:100%;
   background: rgba(0,0,0,0.95);
   display: none;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  padding: 20px;
-  z-index: 1000;
-}
-
-.lightbox-content {
-  text-align: center;
-  max-width: 90%;
-  max-height: 90%;
 }
 
 .image-container {
   position: relative;
-  display: inline-block;
 }
 
 .image-container img {
-  max-width: 100%;
+  max-width: 90vw;
   max-height: 80vh;
-  border-radius: 10px;
-  display: block;
 }
 
-/* Watermark only in lightbox */
-.image-container .watermark {
+/* NAV BUTTONS */
+#prevBtn, #nextBtn {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-25deg);
-  color: rgba(255,255,255,0.3);
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  pointer-events: none;
-  opacity: 1;
-}
-
-#lightbox span {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  color: white;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px;
   cursor: pointer;
 }
 
-#lightbox-caption {
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  margin-bottom: 5px;
+#prevBtn { left: -60px; }
+#nextBtn { right: -60px; }
+
+#close {
+  position: absolute;
+  top:20px;
+  right:30px;
+  font-size: 35px;
+  cursor:pointer;
 }
 
-#lightbox-designer {
-  color: #FFD700;
-  font-size: 1.1rem;
-  margin-top: 0px;
-  font-style: italic;
-  font-weight: 500;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-  text-align: center;
+/* DOWNLOAD */
+.download-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
-/* COMING SOON */
-.coming-soon {
-  font-size: 1.5rem;
-  color: #aaa;
-  padding: 20px;
-}
-
-/* FOOTER */
-.footer {
-  padding: 30px 20px;
-  border-top: 1px solid #222;
-  font-size: 0.95rem;
-  color: #aaa;
-}
-
-/* Responsive */
-@media(max-width:768px){
-  header.section-header { font-size: 2rem; padding: 50px 15px 25px; }
-  .projects { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); padding: 30px 15px; gap: 20px; }
-  .coming-soon { font-size: 1.3rem; }
-}
-
-@media(max-width:480px){
-  header.section-header { font-size: 1.5rem; padding: 40px 10px 20px; }
-  .projects { grid-template-columns: 1fr; padding: 20px 10px; gap: 15px; }
-  .coming-soon { font-size: 1.1rem; }
-}
 </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Damodar Ghimire</a>
-  </div>
-</nav>
+<h2 style="text-align:center">Graphics Designing</h2>
 
-<!-- HEADER -->
-<header class="section-header">
-  <h1>Graphics Designing</h1>
-</header>
+<!-- PROJECTS -->
+<div class="projects">
+<div class="project-card"><img src="MAMA.png"></div>
+<div class="project-card"><img src="DSA.png"></div>
+<div class="project-card"><img src="gulshan jha.png"></div>
+<div class="project-card"><img src="kohli.png"></div>
+<div class="project-card"><img src="lokesh bam.png"></div>
+<div class="project-card"><img src="ROHIT.png"></div>
+<div class="project-card"><img src="sandy.png"></div>
 
-<!-- PROJECTS GRID -->
-  <div class="project-card"><span class="label">DSA</span><img src="DSA.png" alt="DSA"></div>
-<div class="project-card"><span class="label">gulshan jha</span><img src="gulshan jha.png" alt="gulshan jha"></div>
-<div class="project-card"><span class="label">kohli</span><img src="kohli.png" alt="kohli"></div>
-<div class="project-card"><span class="label">lokesh bam</span><img src="lokesh bam.png" alt="lokesh bam"></div>
-<div class="project-card"><span class="label">ROHIT</span><img src="ROHIT.png" alt="ROHIT"></div>
-<div class="project-card"><span class="label">sandy</span><img src="sandy.png" alt="sandy"></div>
-  <div class="project-card"><img src="viraaat.png" alt="Project 1"></div> <div class="project-card"><img src="RKO" alt="Project 2"></div> <div class="project-card"><img src="burger ad.png" alt="Project 3"></div> <div class="project-card"><img src="Devils .png" alt="Project 4"></div> <div class="project-card"><img src="Gaming Headset.png" alt="Project 5"></div> <div class="project-card"><img src="haland.png" alt="Project 6"></div> <div class="project-card"><img src="sunglasses.png" alt="Project 7"></div> <div class="project-card"><img src="Williamson.png" alt="Project 8"></div> <div class="project-card"><img src="PIZZA.png" alt="Project 9"></div> <div class="project-card"><img src="dipendra singh airee.png" alt="Project 10"></div> <div class="project-card"><img src="Redbull.png" alt="Project 11"></div> <div class="project-card"><img src="JASPRIT BUMRAH.png" alt="Project 12"></div> <div class="project-card"><img src="Womens day poster.png" alt="Project 13"></div> <div class="project-card"><img src="Election-Poster.png" alt="Project 14"></div> <div class="project-card"><img src="Trio-Poster.png" alt="Project 15"></div> <div class="project-card"><img src="Happy Holi.png" alt="Project 16"></div> <div class="project-card"><img src="Balen as a pm.png" alt="Project 17"></div> <div class="project-card"><img src="honey.png" alt="Project 18"></div>
+<div class="project-card"><img src="viraaat.png"></div>
+<div class="project-card"><img src="RKO"></div>
+<div class="project-card"><img src="burger ad.png"></div>
+<div class="project-card"><img src="Devils .png"></div>
+<div class="project-card"><img src="Gaming Headset.png"></div>
+<div class="project-card"><img src="haland.png"></div>
+<div class="project-card"><img src="sunglasses.png"></div>
+<div class="project-card"><img src="Williamson.png"></div>
+<div class="project-card"><img src="PIZZA.png"></div>
+<div class="project-card"><img src="dipendra singh airee.png"></div>
+<div class="project-card"><img src="Redbull.png"></div>
+<div class="project-card"><img src="JASPRIT BUMRAH.png"></div>
+<div class="project-card"><img src="Womens day poster.png"></div>
+<div class="project-card"><img src="Election-Poster.png"></div>
+<div class="project-card"><img src="Trio-Poster.png"></div>
+<div class="project-card"><img src="Happy Holi.png"></div>
+<div class="project-card"><img src="Balen as a pm.png"></div>
+<div class="project-card"><img src="honey.png"></div>
 
-</section>
-
-<!-- COMING SOON -->
-<section class="coming-soon text-center">
-  <h2>“Fresh projects arriving soon — don’t miss out!”</h2>
-</section>
+</div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
 
-  <span id="close">&times;</span>
-  <div class="lightbox-content">
-    <div class="image-container">
-      <img src="" alt="Big Image">
-      <div class="watermark">© Damodar Ghimire</div>  
-      <button id="prevBtn">⬅ Prev</button>
-<button id="nextBtn">Next ➡</button>
-    </div>
-    <p id="lightbox-caption"></p>
-    <p id="lightbox-designer">Designed by Damodar</p>
-  </div>
+<span id="close">&times;</span>
+
+<div class="image-container">
+  <button id="prevBtn">⬅</button>
+  <img src="">
+  <button id="nextBtn">➡</button>
 </div>
 
-<!-- FOOTER -->
-<footer class="footer text-center">
-  <p>&copy; 2026 Damodar Ghimire. All Rights Reserved.</p>
-</footer>
+<p id="lightbox-caption"></p>
+<p id="lightbox-info"></p>
+
+<a id="downloadBtn" class="download-btn" download>Download Image</a>
+
+</div>
+
 <script>
-const projectImages = document.querySelectorAll('.project-card img');
+
+const images = document.querySelectorAll('.project-card img');
 const lightbox = document.getElementById('lightbox');
-const lightboxImage = lightbox.querySelector('.image-container img');
-const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxImg = lightbox.querySelector('img');
+const caption = document.getElementById('lightbox-caption');
+const info = document.getElementById('lightbox-info');
+const downloadBtn = document.getElementById('downloadBtn');
+
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
 const closeBtn = document.getElementById('close');
 
-// 👉 NEW: index display (add this element in HTML if not added)
-let infoBox = document.getElementById('lightbox-info');
-
-if (!infoBox) {
-  infoBox = document.createElement('p');
-  infoBox.id = "lightbox-info";
-  infoBox.style.color = "#aaa";
-  infoBox.style.fontSize = "14px";
-  infoBox.style.marginTop = "5px";
-  document.querySelector('.lightbox-content').appendChild(infoBox);
-}
-
-// Captions (unchanged)
 const captions = {
-const captions = {
-  "viraaat.png": "Virat Kohli Poster - Cricket Legend Edit",
-  "RKO": "Randy Orton Edit",
-  "burger ad.png": "Burger Advertisement Poster - Food Marketing Design",
-  "Devils .png": "Devils Poster - Dark Creative Art Design",
-
-  "Gaming Headset.png": "Gaming Headset Poster - Tech Advertisement Design",
-  "haland.png": "Erling Haaland Poster - Football Star Edit",
-  "sunglasses.png": "Sunglasses Product Ad - Stylish Fashion Poster",
-  "Williamson.png": "Kane Williamson Poster - Cricket Player Design",
-
-  "PIZZA.png": "Pizza Advertisement Poster - Food Branding Design",
-  "dipendra singh airee.png": "Dipendra Singh Airee Poster - Cricket Highlight Edit",
-  "Redbull.png": "Red Bull Poster - Energy Drink Action Design",
-  "JASPRIT  BUMRAH.png": "Jasprit Bumrah Poster - Cricket Bowling Star",
-
-  "Womens day poster.png": "Women's Day Poster - Celebration Design",
-  "Election-Poster.png": "Election Campaign Poster - Political Design",
-  "Trio-Poster.png": "Trio Poster - Creative Group Design",
-  "Happy Holi.png": "Happy Holi Poster - Festival of Colors Design",
-
-  "Balen as a pm.png": "Balen Shah as PM Concept Poster - Political Vision Edit",
-  "honey.png": "Honey Product Poster - Natural Sweet Branding"
+  "viraaat.png": "Virat Kohli Poster",
+  "RKO.png": "Randy Orton Edit",
+  "burger ad.png": "Burger Ad",
+  "Devils .png": "Devils Poster",
+  "Gaming Headset.png": "Gaming Headset",
+  "haland.png": "Haaland Poster"
 };
 
-// Convert NodeList to array
-const imagesArray = Array.from(projectImages);
-let currentIndex = 0;
+const imgArray = Array.from(images);
+let index = 0;
 
-// 👉 Open lightbox
-function openLightbox(index) {
-  currentIndex = index;
-  const img = imagesArray[currentIndex];
+function openLightbox(i){
+  index = i;
+  const img = imgArray[index];
 
-  lightbox.style.display = 'flex';
-  lightboxImage.src = img.src;
+  lightbox.style.display = "flex";
+  lightboxImg.src = img.src;
 
-  const fileName = img.getAttribute('src').split('/').pop();
-  lightboxCaption.textContent = captions[fileName] || "No description available";
+  const file = img.src.split('/').pop();
 
-  // 👉 NEW: image info
-  infoBox.textContent = `Image ${currentIndex + 1} / ${imagesArray.length}`;
+  caption.textContent = captions[file] || "No caption";
+  info.textContent = `Image ${index+1} / ${imgArray.length}`;
+
+  downloadBtn.href = img.src;
+  downloadBtn.setAttribute("download", file);
 }
 
-// Click image
-imagesArray.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    openLightbox(index);
-  });
+images.forEach((img,i)=>{
+  img.addEventListener("click",()=>openLightbox(i));
 });
 
-// 👉 Next image
-function nextImage() {
-  currentIndex = (currentIndex + 1) % imagesArray.length;
-  openLightbox(currentIndex);
+function next(){
+  index = (index+1)%imgArray.length;
+  openLightbox(index);
 }
 
-// 👉 Prev image
-function prevImage() {
-  currentIndex = (currentIndex - 1 + imagesArray.length) % imagesArray.length;
-  openLightbox(currentIndex);
+function prev(){
+  index = (index-1+imgArray.length)%imgArray.length;
+  openLightbox(index);
 }
 
-// 👉 Keyboard support (PRO feature)
-document.addEventListener('keydown', (e) => {
-  if (lightbox.style.display === 'flex') {
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
-    if (e.key === 'Escape') closeLightbox();
+nextBtn.onclick = next;
+prevBtn.onclick = prev;
+
+closeBtn.onclick = ()=> lightbox.style.display="none";
+
+lightbox.addEventListener("click",(e)=>{
+  if(e.target===lightbox) lightbox.style.display="none";
+});
+
+document.addEventListener("keydown",(e)=>{
+  if(lightbox.style.display==="flex"){
+    if(e.key==="ArrowRight") next();
+    if(e.key==="ArrowLeft") prev();
+    if(e.key==="Escape") lightbox.style.display="none";
   }
 });
 
-// Close function
-function closeLightbox() {
-  lightbox.style.display = 'none';
-  lightboxImage.src = '';
-  lightboxCaption.textContent = '';
-  infoBox.textContent = '';
-}
-
-// Close button
-closeBtn.addEventListener('click', closeLightbox);
-
-// Click outside
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) closeLightbox();
-});
 </script>
+
 </body>
 </html>
