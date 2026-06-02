@@ -3,127 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphics Designing | Damodar Ghimire</title>
+<title>Graphics Designing & Damodar Ghimire</title>
 
 <style>
 
-/* GENERAL */
+/* ================= ORIGINAL STYLE (KEPT) ================= */
+
 body {
-  margin:0;
-  font-family: Arial;
-  background:#000;
-  color:#fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
 }
 
-/* GRID */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  padding:30px;
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
 }
 
-.project-card img{
-  width:100%;
-  cursor:pointer;
-  border-radius:10px;
+.project-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* LIGHTBOX */
-#lightbox{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+.project-card img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
 }
 
-.image-container{
-  position:relative;
+/* ================= LIGHTBOX ================= */
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
 }
 
-.image-container img{
-  max-width:90vw;
-  max-height:80vh;
+.image-container {
+  position: relative;
 }
 
-/* NAV */
-#prevBtn,#nextBtn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:#fff;
-  color:#000;
-  border:none;
-  padding:10px;
-  cursor:pointer;
+.image-container img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 10px;
 }
 
-#prevBtn{ left:-60px;}
-#nextBtn{ right:-60px;}
-
-#close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:35px;
-  cursor:pointer;
+#prevBtn, #nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-/* DOWNLOAD */
-.download-btn{
-  margin-top:15px;
-  padding:10px 20px;
-  background:gold;
-  color:#000;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:6px;
+#prevBtn { left: -60px; }
+#nextBtn { right: -60px; }
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  cursor: pointer;
 }
 
-/* NAME CLICK */
-.wiki-name{
-  color:#FFD700;
-  cursor:pointer;
-}
-.wiki-name:hover{
-  text-decoration:underline;
-}
-
-/* WIKI MODAL */
-#wikiModal{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.9);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
+/* download */
+.download-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: gold;
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.wiki-content{
-  background:#111;
-  padding:20px;
-  max-width:400px;
-  text-align:center;
-  border-radius:10px;
+/* ================= WIKI POPUP ================= */
+
+#wikiModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
 
-#wikiImg{
-  width:120px;
-  border-radius:10px;
+.wiki-content {
+  background: #111;
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 10px;
 }
 
-#wikiClose{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:30px;
-  cursor:pointer;
+#wikiImg {
+  width: 120px;
+  border-radius: 10px;
+}
+
+#wikiClose {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* clickable name */
+.wiki-name {
+  color: gold;
+  cursor: pointer;
+}
+.wiki-name:hover {
+  text-decoration: underline;
 }
 
 </style>
@@ -131,172 +144,170 @@ body {
 
 <body>
 
-<h2 style="text-align:center">Graphics Designing</h2>
+<h2 style="text-align:center;padding:20px;">Graphics Designing</h2>
 
-<!-- PROJECTS -->
+<!-- ================= ORIGINAL GRID (UNCHANGED) ================= -->
 <div class="projects">
 
-<img src="DSA.png">
-<img src="gulshan jha.png">
-<img src="kohli.png">
-<img src="lokesh bam.png">
-<img src="ROHIT.png">
-<img src="sandy.png">
+<div class="project-card"><img src="DSA.png"></div>
+<div class="project-card"><img src="gulshan jha.png"></div>
+<div class="project-card"><img src="kohli.png"></div>
+<div class="project-card"><img src="lokesh bam.png"></div>
+<div class="project-card"><img src="ROHIT.png"></div>
+<div class="project-card"><img src="sandy.png"></div>
 
-<img src="viraaat.png">
-<img src="RKO.png">
-<img src="burger ad.png">
-<img src="Devils .png">
-<img src="Gaming Headset.png">
-<img src="haland.png">
-<img src="sunglasses.png">
-<img src="Williamson.png">
-<img src="PIZZA.png">
-<img src="dipendra singh airee.png">
-<img src="Redbull.png">
+<div class="project-card"><img src="viraaat.png"></div>
+<div class="project-card"><img src="RKO.png"></div>
+<div class="project-card"><img src="burger ad.png"></div>
+<div class="project-card"><img src="Devils .png"></div>
+<div class="project-card"><img src="Gaming Headset.png"></div>
+<div class="project-card"><img src="haland.png"></div>
+<div class="project-card"><img src="sunglasses.png"></div>
+<div class="project-card"><img src="Williamson.png"></div>
+<div class="project-card"><img src="PIZZA.png"></div>
+<div class="project-card"><img src="dipendra singh airee.png"></div>
+<div class="project-card"><img src="Redbull.png"></div>
 
 </div>
 
-<!-- LIGHTBOX -->
+<!-- ================= LIGHTBOX ================= -->
 <div id="lightbox">
+
 <span id="close">&times;</span>
 
 <div class="image-container">
-<button id="prevBtn">⬅</button>
-<img src="">
-<button id="nextBtn">➡</button>
+  <button id="prevBtn">⬅</button>
+  <img src="">
+  <button id="nextBtn">➡</button>
 </div>
 
 <p id="caption"></p>
-<a id="downloadBtn" class="download-btn" download>Download</a>
+<a id="downloadBtn" class="download-btn" download>Download Image</a>
+
 </div>
 
-<!-- WIKI MODAL -->
+<!-- ================= WIKI POPUP ================= -->
 <div id="wikiModal">
-<div class="wiki-content">
-<span id="wikiClose">&times;</span>
-<img id="wikiImg">
-<h2 id="wikiTitle"></h2>
-<p id="wikiText"></p>
-<a id="wikiLink" target="_blank">Read more</a>
-</div>
+  <div class="wiki-content">
+    <span id="wikiClose">&times;</span>
+    <img id="wikiImg">
+    <h2 id="wikiTitle"></h2>
+    <p id="wikiText"></p>
+    <a id="wikiLink" target="_blank">Read more</a>
+  </div>
 </div>
 
 <script>
 
-/* IMAGES */
-const images=document.querySelectorAll('.projects img');
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=lightbox.querySelector('img');
-const caption=document.getElementById('caption');
-const downloadBtn=document.getElementById('downloadBtn');
+/* ================= CORE ================= */
 
-let index=0;
-const arr=[...images];
+const images = document.querySelectorAll('.project-card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const caption = document.getElementById('caption');
+const downloadBtn = document.getElementById('downloadBtn');
 
-/* CAPTIONS */
-const captions={
-"DSA.png":"<span class='wiki-name'>Dipendra Singh Airee</span> – Nepali Cricket Captain",
-"gulshan jha.png":"<span class='wiki-name'>Gulshan Jha</span> – Nepali Cricket Rising Star",
-"kohli.png":"<span class='wiki-name'>Virat Kohli</span> – Indian Cricket Legend",
-"lokesh bam.png":"<span class='wiki-name'>Lokesh Bam</span> – Nepali Cricket Talent",
-"ROHIT.png":"<span class='wiki-name'>Rohit Paudel</span> – Nepal National Team Captain",
-"sandy.png":"<span class='wiki-name'>Sandip Lamichhane</span> – Spin Bowling Star",
+let index = 0;
+const arr = [...images];
 
-"viraaat.png":"<span class='wiki-name'>Virat Kohli</span> – Cricket Poster Design",
-"RKO.png":"<span class='wiki-name'>Randy Orton</span> – WWE RKO Moment",
+/* ================= CAPTIONS (FIXED + CLEAN) ================= */
 
-"burger ad.png":"Burger Advertisement Poster",
+const captions = {
+"DSA.png":"<span class='wiki-name'>Dipendra Singh Airee</span>",
+"gulshan jha.png":"<span class='wiki-name'>Gulshan Jha</span>",
+"kohli.png":"<span class='wiki-name'>Virat Kohli</span>",
+"lokesh bam.png":"<span class='wiki-name'>Lokesh Bam</span>",
+"ROHIT.png":"<span class='wiki-name'>Rohit Paudel</span>",
+"sandy.png":"<span class='wiki-name'>Sandeep Lamichhane</span>",
+
+"viraaat.png":"<span class='wiki-name'>Virat Kohli</span>",
+"RKO.png":"<span class='wiki-name'>Randy Orton</span>",
+"burger ad.png":"Burger Advertisement",
 "Devils .png":"Devils Noodles Poster",
-
-"Gaming Headset.png":"Gaming Headset Product Ad",
-"haland.png":"<span class='wiki-name'>Erling Haaland</span> – Football Star",
-"sunglasses.png":"Sunglasses Product Poster",
-"Williamson.png":"<span class='wiki-name'>Kane Williamson</span> – Cricket Legend",
-
-"PIZZA.png":"Pizza Advertisement Poster",
-"dipendra singh airee.png":"<span class='wiki-name'>Dipendra Singh Airee</span> – Cricket Poster",
-"Redbull.png":"Red Bull Energy Poster"
+"Gaming Headset.png":"Gaming Product",
+"haland.png":"<span class='wiki-name'>Erling Haaland</span>",
+"sunglasses.png":"Sunglasses Poster",
+"Williamson.png":"<span class='wiki-name'>Kane Williamson</span>",
+"PIZZA.png":"Pizza Ad",
+"dipendra singh airee.png":"<span class='wiki-name'>Dipendra Singh Airee</span>",
+"Redbull.png":"Red Bull Poster"
 };
 
-/* OPEN */
+/* ================= LIGHTBOX ================= */
+
 function openBox(i){
-index=i;
-const img=arr[index];
+index = i;
+const img = arr[index];
 
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
+lightbox.style.display = "flex";
+lightboxImg.src = img.src;
 
-const file=img.src.split('/').pop();
-caption.innerHTML=captions[file]||"No caption";
+const file = img.src.split('/').pop();
+caption.innerHTML = captions[file] || "No caption";
 
-downloadBtn.href=img.src;
+downloadBtn.href = img.src;
+downloadBtn.setAttribute("download", file);
 }
 
-/* CLICK */
 arr.forEach((img,i)=>{
-img.onclick=()=>openBox(i);
+img.onclick = ()=>openBox(i);
 });
 
-/* NAV */
-document.getElementById('nextBtn').onclick=()=>{
-index=(index+1)%arr.length;
+/* nav */
+document.getElementById("nextBtn").onclick = ()=>{
+index = (index+1)%arr.length;
 openBox(index);
 };
 
-document.getElementById('prevBtn').onclick=()=>{
-index=(index-1+arr.length)%arr.length;
+document.getElementById("prevBtn").onclick = ()=>{
+index = (index-1+arr.length)%arr.length;
 openBox(index);
 };
 
-/* CLOSE */
-document.getElementById('close').onclick=()=>lightbox.style.display="none";
+/* close */
+document.getElementById("close").onclick = ()=>{
+lightbox.style.display = "none";
+};
 
-/* KEYBOARD */
-document.addEventListener('keydown',(e)=>{
-if(lightbox.style.display==="flex"){
-if(e.key==="ArrowRight") index=(index+1)%arr.length,openBox(index);
-if(e.key==="ArrowLeft") index=(index-1+arr.length)%arr.length,openBox(index);
-if(e.key==="Escape") lightbox.style.display="none";
-}
-});
+/* ================= WIKI API ================= */
 
-/* WIKI FETCH */
-const wikiModal=document.getElementById("wikiModal");
-const wikiTitle=document.getElementById("wikiTitle");
-const wikiText=document.getElementById("wikiText");
-const wikiImg=document.getElementById("wikiImg");
-const wikiLink=document.getElementById("wikiLink");
+const wikiModal = document.getElementById("wikiModal");
+const wikiTitle = document.getElementById("wikiTitle");
+const wikiText = document.getElementById("wikiText");
+const wikiImg = document.getElementById("wikiImg");
+const wikiLink = document.getElementById("wikiLink");
 
 async function fetchWiki(name){
-const res=await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`);
-const data=await res.json();
+const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`);
+const data = await res.json();
 
-wikiTitle.textContent=data.title;
-wikiText.textContent=data.extract||"No info";
+wikiTitle.textContent = data.title;
+wikiText.textContent = data.extract || "No info available";
 
 if(data.thumbnail){
-wikiImg.src=data.thumbnail.source;
-wikiImg.style.display="block";
+wikiImg.src = data.thumbnail.source;
 }else{
-wikiImg.style.display="none";
+wikiImg.style.display = "none";
 }
 
-wikiLink.href=data.content_urls.desktop.page;
-wikiModal.style.display="flex";
+wikiLink.href = data.content_urls.desktop.page;
+wikiModal.style.display = "flex";
 }
 
-/* CLICK NAME */
+/* click name */
 document.addEventListener("click",(e)=>{
 if(e.target.classList.contains("wiki-name")){
 fetchWiki(e.target.textContent);
 }
 });
 
-/* CLOSE WIKI */
-document.getElementById("wikiClose").onclick=()=>wikiModal.style.display="none";
-wikiModal.onclick=(e)=>{
-if(e.target===wikiModal) wikiModal.style.display="none";
+/* close wiki */
+document.getElementById("wikiClose").onclick = ()=>{
+wikiModal.style.display = "none";
+};
+
+wikiModal.onclick = (e)=>{
+if(e.target === wikiModal) wikiModal.style.display = "none";
 };
 
 </script>
